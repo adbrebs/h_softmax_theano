@@ -86,6 +86,6 @@ output_fun = theano.function([x], y_hat_all)
 # Test
 #############
 x_mat = 0.001*np.random.normal(size=(batch_size, input_size)).astype(floatX)
-y_mat = np.ones(batch_size, dtype='int32')
+y_mat = np.random.randint(0, 1000, batch_size).astype('int32')
 print training_fun(x_mat, y_mat)
 print output_fun(x_mat)
